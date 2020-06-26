@@ -134,13 +134,13 @@
   
   解决方法是将每一种workflow的配置代码写在单独的文件中，然后在init.el中引入该文件。操作如下：
 
-  1. 在.emacs.d文件夹下创建workflow文件夹。
-  2. 在init.el中添加代码 =(add-to-list 'load-path (concat user-emacs-directory "workflow"))= 。
-  3. 在workflow文件夹下创建 =init-better.el= ，将“最小配置”的代码粘贴进去。
+  1. 在.emacs.d文件夹下创建elisp文件夹。
+  2. 在init.el中添加代码 =(add-to-list 'load-path (concat user-emacs-directory "elisp"))= 。
+  3. 在elisp文件夹下创建 =init-better.el= ，将“最小配置”的代码粘贴进去。
   4. 在 =init-better.el= 最后加上代码 =(provide 'init-better)= 。
   5. 在 =init.el= 最后加上代码 =(require 'init-better)=
 
-  根据字面意思也不难理解：步骤2的代码将workflow文件夹下的所有文件加入配置加载路径；步骤4的provide提供文件名，使其可以被引入；步骤5的require引入了该文件。这样我们就将最小配置的代码引入到init.el中了。以后的各种workflow我们也将使用这种方式来组织配置文件。
+  根据字面意思也不难理解：步骤2的代码将elisp文件夹下的所有文件加入配置加载路径；步骤4的provide提供文件名，使其可以被引入；步骤5的require引入了该文件。这样我们就将最小配置的代码引入到init.el中了。以后的各种workflow我们也将使用这种方式来组织配置文件。
 
 * 实用package
   介绍一些对于新手实用的package，直接将下面的配置粘贴到elisp文件夹下的 =init-utils.el= 文件中。
@@ -163,8 +163,33 @@
     ;; emacs图标库
     ;; 按键 "M-x all-the-icons-install-fonts" 安装字体
     :ensure t)
+
+  (use-package ivy
+    ;; emacs补全框架
+    :ensure t
+    :init
+    (setq ivy-use-virtual-buffers t
+	  enable-recursive-minibuffers t)
+    :config
+    (ivy-mode 1))
+
+  (use-package counsel
+    ;; 使用ivy重写部分emacs命令
+    :ensure t
+    :bind (("M-x" . counsel-M-x)
+	   ("C-x C-f" . counsel-find-file)
+	   ("C-c t l" . counsel-load-theme)
+	   ("C-x r b" . counsel-bookmark)))
+
+  (use-package swiper
+    ;; 快捷搜索
+    :ensure nil
+    :bind (("C-s" . swiper)))
   #+END_SRC
 
 同理，在配置init-utils.el文件结尾加上 =(provide 'init-utils)= ，然后在init.el中引入 =(require 'init-utils)= 。
 
-以上就是使用emacs前的准备工作，接下来就可以愉快的学习各种工作流啦！
+* emacs主题
+  选择一个简洁、美观的主题不仅可以缓解眼睛疲劳，还可以提高使用emacs的效率。emacs的主题分为亮色和暗色两种，我的使用习惯是白天使用亮色主题，晚上使用暗色主题。使用快捷键 =C-c t l= 可以切换emacs内置主题。
+
+  以上就是使用emacs前的准备工作，接下来就可以愉快的学习各种工作流啦！
