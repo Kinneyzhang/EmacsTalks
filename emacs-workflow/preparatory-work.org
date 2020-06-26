@@ -142,4 +142,29 @@
 
   根据字面意思也不难理解：步骤2的代码将workflow文件夹下的所有文件加入配置加载路径；步骤4的provide提供文件名，使其可以被引入；步骤5的require引入了该文件。这样我们就将最小配置的代码引入到init.el中了。以后的各种workflow我们也将使用这种方式来组织配置文件。
 
+* 实用package
+  介绍一些对于新手实用的package，直接将下面的配置粘贴到elisp文件夹下的 =init-utils.el= 文件中。
+
+  #+BEGIN_SRC emacs-lisp
+  (use-package super-save
+    ;; 自动保存，用于替换默认的自动保存
+    :ensure t
+    :config
+    (super-save-mode +1)
+    (setq super-save-auto-save-when-idle t))
+
+  (use-package which-key
+    ;; emacs按键提示
+    :ensure t
+    :config
+    (which-key-mode))
+
+  (use-package all-the-icons
+    ;; emacs图标库
+    ;; 按键 "M-x all-the-icons-install-fonts" 安装字体
+    :ensure t)
+  #+END_SRC
+
+同理，在配置init-utils.el文件结尾加上 =(provide 'init-utils)= ，然后在init.el中引入 =(require 'init-utils)= 。
+
 以上就是使用emacs前的准备工作，接下来就可以愉快的学习各种工作流啦！
