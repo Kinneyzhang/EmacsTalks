@@ -2,7 +2,7 @@
 #+DATE: 2020-06-26
 #+AUTHOR: Kinney Zhang
 
-这是我的中文emacs文章合集，皆为原创，持续更新。文章主要介绍与Emacs和Emacs-Lisp相关的内容。
+这是我的中文emacs文章合辑，皆为原创，持续更新。文章主要介绍与Emacs和Emacs-Lisp相关的内容。
 
 文章主要分为四类：
  * Emacs Workflow 介绍emacs常用的工作流，面向emacs的新手，非程序员。
@@ -17,5 +17,8 @@
 ** Elisp Falicity
 
 ** Emacs Hack
+   * [[./emacs-hack/compress-and-convert-video.org][视频压缩及格式(gif)转换]]
+   * [[./emacs-hack/string-batch-replacement.org][批量替换字符串]]
 
 ** Emacs Package
+   * [[./emacs-package/html-template-language-in-emacs.org][基于Emacs-Lisp的HTML模版库]]

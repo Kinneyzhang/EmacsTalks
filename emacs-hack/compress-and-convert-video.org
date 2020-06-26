@@ -1,0 +1,28 @@
+#+TITLE: 视频压缩及格式(gif)转换
+#+DATE: 2020-02-20
+#+CATEGORY: Emacs
+#+STARTUP: content
+#+OPTIONS: toc:nil H:2 num:2
+
+MacOS系统使用mov作为默认视频格式，mov格式的缺点是文件体积大，不便传输与使用。大多数时候我需要将视频压缩为mp4格式。同时，写文档时经常需要使用gif图片展示hack效果，所以将视频转为gif也成了硬需求之一。关于视频的压缩与格式转换，有很多在线工具以及app可以实现，但我更钟爱命令行工具。因为命令行比封装好的ui使用方便，可选参数多。最重要的是，可以和emacs结合。
+
+[[https://www.ffmpeg.org/ffmpeg.html][ffmpeg]] 是一个非常优秀的视频处理命令，MacOS下可使用homebrew安装。做了下小hack，以后就可以在emacs中处理视频文件，生成gif啦。
+
+#+BEGIN_SRC emacs-lisp
+(defun my/video-compress-and-convert (video new)
+  (interactive "fvideo path: \nfnew item name (eg. exam.mp4, exam.gif) : ")
+  (let ((extension (cadr (split-string (file-name-nondirectory new) "\\."))))
+    (if (string= extension "gif")
+	(progn
+	  (shell-command
+	   (concat "ffmpeg -i " video " -r 5 " new))
+	  (message "%s convert to %s successfully!" video new))
+      (progn
+	(shell-command
+	 (concat "ffmpeg -i " video " -vcodec libx264 -b:v 5000k -minrate 5000k -maxrate 5000k -bufsize 4200k -preset fast -crf 20 -y -acodec libmp3lame -ab 128k " new))
+	(message "%s compress and convert to %s successfully!" video new))
+      )
+    ))
+#+END_SRC
+
+除此之外， =ffmpeg= 的功能远不止这些，还支持视频的录制、剪辑合并、加滤镜和音频处理等，读者可以访问 [[https://www.ffmpeg.org][ffmpeg官网]] 探索。
