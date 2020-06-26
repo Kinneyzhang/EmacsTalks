@@ -1,0 +1,22 @@
+#+TITLE: 中文Emacs文章合辑
+#+DATE: 2020-06-26
+#+AUTHOR: Kinney Zhang
+
+* Chinese Emacs Posts
+  这是我的中文emacs文章合集，皆为原创，持续更新。文章主要介绍与Emacs和Emacs-Lisp相关的内容。
+
+  文章主要分为四类：
+  * Emacs Workflow 介绍emacs常用的工作流，面向只使用emacs的新手，非程序员。
+  * Elisp Falicity 介绍emacs-lisp的知识，偏向语法和emacs的api。
+  * Emacs Hack 使用emacs-lisp来处理实际问题的小例子。
+  * Emacs Package 使用emacs-lisp编写的emacs插件。
+
+* Emacs Workflow
+  * [[./emacs-workflow/get-started.org][开门见山]]
+  * [[./emacs-workflow/preparatory-work.org][准备工作]]
+
+* Elisp Falicity
+
+* Emacs Hack
+
+* Emacs Package
