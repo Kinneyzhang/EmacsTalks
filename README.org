@@ -19,6 +19,7 @@
 ** Emacs Hack
    * [[./emacs-hack/compress-and-convert-video.org][视频压缩及格式(gif)转换]]
    * [[./emacs-hack/string-batch-replacement.org][批量替换字符串]]
+   * [[./emacs-hack/split-similar-blocks.org][分割文件相似内容]]
 
 ** Emacs Package
    * [[./emacs-package/html-template-language-in-emacs.org][基于Emacs-Lisp的HTML模版库]]
