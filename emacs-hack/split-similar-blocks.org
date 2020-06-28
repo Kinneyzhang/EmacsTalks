@@ -55,7 +55,7 @@
 	(insert-file-contents file)
 	(goto-char (point-min))
 	(while (< (point) (point-max))
-	  (if (search-forward-regexp "^第.回:" (line-end-position) t)
+	  (if (search-forward-regexp "^第.+回:" (line-end-position) t)
 	      (progn 
 		(setq filename (string-trim (thing-at-point 'line))) 
 		(next-line)
@@ -64,7 +64,7 @@
 	    (save-excursion ;; 保存光标的位置：只判断下一行的情况，不改变实际要操作的光标。
 	      (next-line)
 	      (beginning-of-line)
-	      (when (or (search-forward-regexp "^第.回:" (line-end-position) t)
+	      (when (or (search-forward-regexp "^第.+回:" (line-end-position) t)
 			(= (point) (point-max)))
 		(previous-line)
 		(end-of-line)
