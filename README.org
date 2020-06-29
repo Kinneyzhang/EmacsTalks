@@ -2,13 +2,15 @@
 #+DATE: 2020-06-26
 #+AUTHOR: Kinney Zhang
 
-这是我的中文emacs文章合辑，皆为原创，持续更新。文章主要介绍与Emacs和Emacs-Lisp相关的内容。
+这是我的中文emacs文章合辑，皆为原创，不定期更新。文章主要介绍与Emacs和Emacs-Lisp相关的内容。
 
 文章主要分为四类：
- * Emacs Workflow 介绍emacs常用的工作流，面向emacs的新手，非程序员。
- * Elisp Falicity 介绍emacs-lisp的知识，偏向语法和emacs的api。
- * Emacs Hack 介绍使用emacs-lisp来处理实际问题的小例子。
- * Emacs Package 介绍使用emacs-lisp编写的emacs插件。
+ * Emacs Workflow: 介绍emacs常用的工作流，面向emacs的新手。
+ * Elisp Falicity:  介绍emacs-lisp的知识，偏向语法和emacs的api。
+ * Emacs Hack: 介绍使用emacs-lisp来处理实际问题的小例子。
+ * Emacs Package: 介绍自己编写的emacs插件。
+
+另外，Emacs Hack里的例子基本是我自己的个性化需求或论坛里的问题。如果你有有意思的、有价值的问题，欢迎在issue里留言。我会选择有意义的问题用elisp解决，然后写成文章。
 
 ** Emacs Workflow
    * [[./emacs-workflow/get-started.org][开门见山]]

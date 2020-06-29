@@ -1,12 +1,13 @@
-#+TITLE: 批量替换字符串
+#+TITLE: Emacs Hack - 批量替换字符串
 #+DATE: 2020-06-16
 #+CATEGORY: Emacs
 #+STARTUP: showall
-#+OPTIONS: toc:nil H:2 num:2
-#+TOC: headlines:2
+#+OPTIONS: toc:t H:2 num:0
 
-论坛里的同学提了一个问题：不使用interactive function(M-%)如何批量替换文件中的字符串？应用场景为文字校验，我觉得还挺有意义的，便花了点时间实现了。
+* 实际问题
+不使用interactive function(M-%)如何批量替换文件中的字符串？应用场景为文字校验。
 
+* 解决思路
 字符串替换分三种情况：
 1. 在当前buffer替换  
 2. 在指定文件中替换  
@@ -22,6 +23,7 @@
 
 优先使用列表变量的值，如果该变量值为nil则使用repl-file对应的文件中的值。其中文件中的pair只能用于 =replall-string= 函数。两个变量列表的值分别对应两个函数。repl-file的格式为每行一个pair，分别为被替换的字符串和用于替换的字符串，用空格隔开。
 
+* 代码实现
 主函数 =replall-string= 和 =replall-regexp= 可以选择替换类型。对于具体的情况也可以直接使用具体的替换函数。代码如下:
 
 #+BEGIN_SRC emacs-lisp
@@ -147,4 +149,3 @@
     (call-interactively #'replall-regexp-in-directory))
    (t (message "please input 1~3!"))))
 #+END_SRC
-
