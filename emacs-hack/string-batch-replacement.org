@@ -109,7 +109,7 @@
     (dolist (file files)
       (when (not (or (string= "." (substring file 0 1))
 		     (string= "#" (substring file 0 1))
-		     (string= "~" (substring file 0 1))))
+		     (string= "~" (substring file -1))))
 	(push file real-files)))
     real-files))
 
