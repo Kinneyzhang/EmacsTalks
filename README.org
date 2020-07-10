@@ -5,7 +5,7 @@
 这是我的中文emacs文章合辑，皆为原创，不定期更新。文章主要介绍与Emacs和Emacs-Lisp相关的内容。
 
 文章主要分为四类：
- * Emacs Workflow: 介绍emacs常用的工作流，面向emacs的新手。
+ * Emacs Workflow: 介绍emacs常用的工作流，面向emacs新手。
  * Emacs Lisp:  介绍emacs-lisp的知识，偏向语法和emacs的api。
  * Emacs Hack: 介绍使用emacs-lisp来处理实际问题的小例子。
  * Emacs Package: 介绍自己编写的emacs插件。
@@ -15,6 +15,7 @@
 ** Emacs Workflow
    * [[./emacs-workflow/get-started.org][开门见山]]
    * [[./emacs-workflow/preparatory-work.org][准备工作]]
+   * [[./emacs-workflow/file-management.org][文件管理]]
 
 ** Emacs Lisp
    暂无内容...
