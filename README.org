@@ -1,4 +1,4 @@
-#+TITLE: 中文Emacs文章合辑
+#+TITLE: EmacsTalks
 #+DATE: 2020-06-26
 #+AUTHOR: Kinney Zhang
 
