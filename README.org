@@ -18,7 +18,7 @@
    * [[./emacs-workflow/file-management.org][文件管理]]
 
 ** Emacs Lisp
-   * [[./emacs-hack/ewoc-introduction.org][ewoc使用介绍]]
+   * [[./emacs-lisp/ewoc-introduction.org][ewoc使用介绍]]
 
 ** Emacs Hack
    * [[./emacs-hack/compress-and-convert-video.org][视频压缩及格式(gif)转换]]
