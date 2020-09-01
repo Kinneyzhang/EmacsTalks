@@ -9,13 +9,7 @@
 读了一些关于时间管理和习惯培养的书籍和文章，我意识到“仪式感”和“记录反思”的重要性。事实上，以自己喜欢的方式做记录是件很开心的事情，我已经连续80天写晨间日记和晚间总结。现在, 写日志已经变成了习惯。但我希望培养更多好的习惯，用我自己喜欢的方式(在emacs中)，所以有了gk-habit这个demo。
 
 ** 效果
-    #+BEGIN_EXPORT html
-    <div class="iframe-container">
-    <iframe src="//player.bilibili.com/player.html?aid=414020152&bvid=BV1PV411z7si&cid=220197879&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-    </div>
-    #+END_EXPORT
-
-    视频不清晰，可以到b站看: https://www.bilibili.com/video/BV1PV411z7si/
+   https://www.bilibili.com/video/BV1PV411z7si/
 
 ** 思路
    gk-habit使用emacsql-sqlite创建数据库，有两个表 "habit" 和 "record"。前者记录习惯及其相关参数，后者记录习惯打卡的数据。
