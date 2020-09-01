@@ -1,4 +1,4 @@
-#+TITLE: 视频压缩及格式(gif)转换
+#+TITLE: Emacs Hack - 视频压缩及格式(gif)转换
 #+DATE: 2020-02-20
 #+CATEGORY: Emacs
 #+STARTUP: content
